@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
+ios/Pods/
+android/.gradle/
+android/app/build/
+android/build/
