@@ -1,74 +1,305 @@
-import { Lesson } from '../../../types/Lesson';
+import {Lesson} from '../../../types/Lesson';
 
 
 export const englishLessons: Lesson[] = [
 
-{
-    id:1,
+  {
 
-    language:'Inglés',
+    id: 1,
 
-    world:1,
+    language: 'Inglés',
 
-    level:1,
+    world: 1,
 
-    title:'Greetings',
+    level: 1,
 
-    word:'Hello',
+    title: 'Buenos días',
 
-    translation:'Hola',
+    word: 'GOOD MORNING',
 
-    pronunciation:'Hello',
+    translation: 'Buenos días',
 
-    image:'',
-
-    audio:'',
-},
+    pronunciation: 'gud mornin',
 
 
-{
-    id:2,
 
-    language:'Inglés',
-
-    world:1,
-
-    level:2,
-
-    title:'My name',
-
-    word:'My name is',
-
-    translation:'Mi nombre es',
-
-    pronunciation:'Mai neim is',
-
-    image:'',
-
-    audio:'',
-},
+    cards: [
 
 
-{
-    id:3,
+      {
 
-    language:'Inglés',
+        id: 1,
 
-    world:1,
+        title:
+          'Aprendamos un nuevo saludo',
 
-    level:3,
+        description:
+          'Hola, hoy aprenderemos a decir Hola en ASL ',
 
-    title:'Numbers',
+        spanish:
+          'Hola, hoy aprenderemos a decir buenos días en inglés.',
 
-    word:'One',
+        targetLanguage:
+          'GOOD MORNING',
 
-    translation:'Uno',
+        media: {
 
-    pronunciation:'Uan',
+          type: 'video',
 
-    image:'',
+          source:
+            require(
+              '../../../assets/videos/saludo.mp4',
+            ),
 
-    audio:'',
-}
+          description:
+            'Video introductorio en lenguaje de señas.',
+        },
+
+        video:
+          require(
+            '../../../assets/videos/saludo.mp4',
+          ),
+
+      },
+
+
+
+      {
+
+        id: 2,
+
+        title:
+          'Así se dice',
+
+        description:
+          'Observa la expresión escrita en inglés.',
+
+        spanish:
+          'Buenos días',
+
+        targetLanguage:
+          'GOOD MORNING',
+
+        media: {
+
+          type: 'image',
+
+          source:
+            require(
+              '../../../assets/images/logo.png',
+            ),
+
+          description:
+            'Presentación textual de la expresión en inglés.',
+        },
+
+      },
+
+
+
+      {
+
+        id: 3,
+
+        title:
+          'Ahora en lenguaje de señas Americano (ASL)',
+
+        description:
+          'Observa cómo se expresa buenos días en ASL.',
+
+        spanish:
+          'Buenos días',
+
+        targetLanguage:
+          'GOOD MORNING',
+
+        media: {
+
+          type: 'video',
+
+          source:
+            require(
+              '../../../assets/videos/BDASL.mp4',
+            ),
+
+          description:
+            'Traducción de buenos días mediante lenguaje de señas ASL.',
+        },
+
+        video:
+          require(
+            '../../../assets/videos/BDASL.mp4',
+          ),
+
+      },
+
+
+
+      {
+
+        id: 4,
+
+        title:
+          '¿Cómo se pronuncia?',
+
+        description:
+          'Observa y aprende la pronunciación.',
+
+        spanish:
+          'Buenos días',
+
+        targetLanguage:
+          'GOOD MORNING',
+
+        pronunciation:
+          'gud mornin',
+
+        media: {
+
+          type: 'image',
+
+          source:
+            require(
+              '../../../assets/images/logo.png',
+            ),
+
+          description:
+            'Apoyo visual para la pronunciación.',
+        },
+
+      },
+
+
+
+      {
+
+        id: 5,
+
+        title:
+          'Aprendamos a escribir',
+
+        description:
+          'Observa el video y aprende cómo se escribe esta expresión en inglés.',
+
+        spanish:
+          'Buenos días',
+
+        targetLanguage:
+          'GOOD MORNING',
+
+        media: {
+
+          type: 'video',
+
+          source:
+            require(
+              '../../../assets/videos/escritura_hola_ingles.mp4',
+            ),
+
+          description:
+            'Video explicativo sobre la escritura de la expresión en inglés.',
+        },
+
+        video:
+          require(
+            '../../../assets/videos/escritura_hola_ingles.mp4',
+          ),
+
+      },
+
+    ],
+
+
+
+    game: {
+
+      type: 'multiple-choice',
+
+      question:
+        'Encuentra el saludo GOOD MORNING',
+
+      maxAttempts: 2,
+
+
+      options: [
+
+        {
+
+          id: 1,
+
+          word:
+            'GOOD MORNING',
+
+          video:
+            require(
+              '../../../assets/videos/buenos_dias.mp4',
+            ),
+
+          correct: true,
+
+        },
+
+
+        {
+
+          id: 2,
+
+          word:
+            'GOOD NIGHT',
+
+          video:
+            require(
+              '../../../assets/videos/buenas_noches.mp4',
+            ),
+
+          correct: false,
+
+        },
+
+      ],
+
+
+      starsByAttempt: [
+
+        {
+
+          attempt: 1,
+
+          stars: 3,
+
+        },
+
+        {
+
+          attempt: 2,
+
+          stars: 2,
+
+        },
+
+      ],
+
+    },
+
+
+
+    reward: {
+
+      characterId: 2,
+
+      name:
+        'Benjamín Zeledón',
+
+      image:
+        require(
+          '../../../assets/images/benjamin.png',
+        ),
+
+      description:
+        '¡Has desbloqueado a Benjamín Zeledón! Ahora forma parte de tu colección de héroes de Nicaragua.',
+
+    },
+
+  },
 
 ];

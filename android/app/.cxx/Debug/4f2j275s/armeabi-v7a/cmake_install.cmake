@@ -51,6 +51,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnreanimated_autolinked_build/cmake_install.cmake")
   include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/safeareacontext_autolinked_build/cmake_install.cmake")
   include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnscreens_autolinked_build/cmake_install.cmake")
+  include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNSoundSpec_autolinked_build/cmake_install.cmake")
   include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNVectorIconsSpec_autolinked_build/cmake_install.cmake")
   include("C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnworklets_autolinked_build/cmake_install.cmake")
 

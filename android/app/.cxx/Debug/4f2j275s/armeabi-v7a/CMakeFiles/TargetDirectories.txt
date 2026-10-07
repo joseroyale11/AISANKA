@@ -22,6 +22,9 @@ C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/safeareaconte
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNSoundSpec_autolinked_build/CMakeFiles/react_codegen_RNSoundSpec.dir
+C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNSoundSpec_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNSoundSpec_autolinked_build/CMakeFiles/rebuild_cache.dir
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNVectorIconsSpec_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/RNVectorIconsSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

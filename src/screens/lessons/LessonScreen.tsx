@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -15,26 +14,33 @@ import {RootState} from '../../store';
 
 import {getLearningSession} from '../../engine/LearningEngine';
 
-import COLORS from '../../theme/colors';
+import AutismLesson from '../../components/lessons/AutismLesson';
+import AuditoryLesson from '../../components/lessons/AuditoryLesson';
+import TDAHLesson from '../../components/lessons/TDAHLesson';
+import VisualLesson from '../../components/lessons/VisualLesson';
+import NormalLesson from '../../components/lessons/NormalLesson';
 
-
-export default function LessonScreen({route, navigation}: any) {
+export default function LessonScreen({
+  route,
+  navigation,
+}: any) {
 
   const {
     levelId,
   } = route.params;
 
-
   const student = useSelector(
     (state: RootState) =>
-      state.student.currentStudent
+      state.student.currentStudent,
   );
 
+  // =====================================================
+  // SIN ESTUDIANTE
+  // =====================================================
 
   if (!student) {
 
     return (
-
       <View style={styles.errorContainer}>
 
         <Text style={styles.errorText}>
@@ -42,34 +48,27 @@ export default function LessonScreen({route, navigation}: any) {
         </Text>
 
       </View>
-
     );
 
   }
 
-
- 
+  // =====================================================
+  // SESIÓN
+  // =====================================================
 
   const studentForLesson = {
-
     ...student,
-
     currentLevel: levelId,
-
   };
-
-
 
   const session =
     getLearningSession(
-      studentForLesson
+      studentForLesson,
     );
-
 
   if (!session.lesson) {
 
     return (
-
       <View style={styles.errorContainer}>
 
         <Text style={styles.errorText}>
@@ -77,389 +76,246 @@ export default function LessonScreen({route, navigation}: any) {
         </Text>
 
       </View>
-
     );
 
   }
 
+  const lesson = session.lesson;
 
-  const lesson =
-    session.lesson;
+// =====================================================
+// PERFIL TDAH
+// =====================================================
 
-
-  function continuar() {
-
-    navigation.navigate(
-      'LearnWord',
-      {
-        levelId: levelId,
-      }
-    );
-
-  }
-
+if (student.profile === 'tdah') {
 
   return (
-
-    <ImageBackground
-      style={styles.background}
-      resizeMode="cover"
+    <SafeAreaView
+      style={styles.container}
     >
 
-      <SafeAreaView style={styles.container}>
+      <TDAHLesson
+        lesson={lesson}
+        levelId={levelId}
+        onComplete={() => {
 
+          navigation.navigate(
+            'HolaMiskitoGame',
+            {
+              lesson,
+              levelId,
+            },
+          );
 
+        }}
+        onBack={() => {
+          navigation.goBack();
+        }}
+      />
 
-        <View style={styles.header}>
+    </SafeAreaView>
+  );
 
-          <Text style={styles.smallText}>
-            NIVEL {levelId}
-          </Text>
+}
+  // =====================================================
+  // PERFIL AUDITIVO
+  // =====================================================
 
-          <Text style={styles.title}>
-            {lesson.title}
-          </Text>
+  if (student.profile === 'auditivo') {
 
-        </View>
+    return (
 
+      <SafeAreaView
+        style={styles.container}
+      >
 
+        <AuditoryLesson
+          lesson={lesson}
 
-        <View style={styles.content}>
+          onComplete={() => {
 
+            navigation.navigate(
+              'BuenosDiasInglesGame',
+              {
+                lesson,
+                levelId,
+              },
+            );
 
-          <View style={styles.wordCard}>
-
-
-            <Text style={styles.word}>
-              {lesson.word}
-            </Text>
-
-
-            <View style={styles.separator} />
-
-
-            <Text style={styles.translation}>
-              {lesson.translation}
-            </Text>
-
-
-          </View>
-
-
-
-
-          <View style={styles.progressContainer}>
-
-            <View style={styles.progressActive} />
-
-            <View style={styles.progressInactive} />
-
-            <View style={styles.progressInactive} />
-
-            <View style={styles.progressInactive} />
-
-          </View>
-
-
-          <Text style={styles.instruction}>
-            Mira la palabra y descubre qué significa.
-          </Text>
-
-
-        </View>
-
-
-
-
-        <View style={styles.footer}>
-
-          <TouchableOpacity
-            style={styles.button}
-            activeOpacity={0.85}
-            onPress={continuar}
-          >
-
-            <Text style={styles.buttonText}>
-              CONTINUAR
-            </Text>
-
-            <Text style={styles.arrow}>
-              →
-            </Text>
-
-          </TouchableOpacity>
-
-        </View>
-
+          }}
+        />
 
       </SafeAreaView>
 
-    </ImageBackground>
+    );
+
+  }
+
+
+
+// =====================================================
+// PERFIL NORMAL
+// =====================================================
+
+if (student.profile === 'normal') {
+
+  return (
+
+    <SafeAreaView
+      style={styles.container}
+    >
+
+      <NormalLesson
+        lesson={lesson}
+
+        levelId={levelId}
+
+        onComplete={() => {
+
+          navigation.navigate(
+            'HolaMayangnaGame',
+            {
+              lesson,
+              levelId,
+            },
+          );
+
+        }}
+
+        onBack={() => {
+
+          navigation.goBack();
+
+        }}
+      />
+
+    </SafeAreaView>
 
   );
 
 }
 
 
+
+  // =====================================================
+  // PERFIL VISUAL
+  // =====================================================
+
+  if (student.profile === 'visual') {
+    return (
+      <SafeAreaView
+        style={styles.container}
+      >
+        <VisualLesson
+          lesson={lesson}
+          onComplete={() => {
+            navigation.navigate(
+              'HolaEspañolGame',
+              {
+                lesson,
+                levelId,
+              },
+            );
+
+          }}
+
+        />
+
+
+    </SafeAreaView>
+
+  );
+
+}
+  // =====================================================
+  // PERFIL AUTISMO
+  // =====================================================
+
+  if (student.profile === 'autismo') {
+
+    return (
+
+      <ImageBackground
+        source={require(
+          '../../assets/images/fondo.png'
+        )}
+        style={styles.background}
+        resizeMode="cover"
+      >
+
+        <SafeAreaView
+          style={styles.container}
+        >
+
+          <AutismLesson
+            lesson={lesson}
+
+            onComplete={() => {
+
+              navigation.navigate(
+                'HolaChinoGame',
+                {
+                  lesson,
+                  levelId,
+                },
+              );
+
+            }}
+          />
+
+        </SafeAreaView>
+
+      </ImageBackground>
+
+    );
+
+  }
+
+  // =====================================================
+  // PERFIL NO DISPONIBLE
+  // =====================================================
+
+  return (
+
+    <View style={styles.errorContainer}>
+
+      <Text style={styles.errorText}>
+        Adaptación no disponible para este perfil.
+      </Text>
+
+    </View>
+
+  );
+
+}
+
 const styles = StyleSheet.create({
 
   background: {
-
     flex: 1,
-
   },
-
 
   container: {
-
     flex: 1,
-
-    paddingHorizontal: 25,
-
   },
 
-
-  header: {
-
-    alignItems: 'center',
-
-    paddingTop: 25,
-
-  },
-
-
-  smallText: {
-
-    fontSize: 14,
-
-    fontWeight: '700',
-
-    color: '#64748B',
-
-    letterSpacing: 2,
-
-  },
-
-
-  title: {
-
-    marginTop: 8,
-
-    fontSize: 25,
-
-    fontWeight: '800',
-
-    color: '#1F2937',
-
-    textAlign: 'center',
-
-  },
-
-
-  content: {
-
+  errorContainer: {
     flex: 1,
-
-    justifyContent: 'center',
-
-    alignItems: 'center',
-
-  },
-
-
-  wordCard: {
-
-    width: '100%',
-
-    minHeight: 280,
-
-    borderRadius: 30,
-
-    backgroundColor: '#FFFFFF',
 
     justifyContent: 'center',
 
     alignItems: 'center',
 
     padding: 30,
-
-    elevation: 10,
-
-    shadowColor: '#000',
-
-    shadowOpacity: 0.15,
-
-    shadowRadius: 15,
-
-    shadowOffset: {
-
-      width: 0,
-
-      height: 7,
-
-    },
-
   },
-
-
-  word: {
-
-    fontSize: 64,
-
-    fontWeight: '800',
-
-    color: '#1F2937',
-
-    textAlign: 'center',
-
-  },
-
-
-  separator: {
-
-    width: 80,
-
-    height: 4,
-
-    borderRadius: 2,
-
-    backgroundColor: '#34D399',
-
-    marginVertical: 20,
-
-  },
-
-
-  translation: {
-
-    fontSize: 30,
-
-    fontWeight: '700',
-
-    color: '#00A078',
-
-    textAlign: 'center',
-
-  },
-
-
-  progressContainer: {
-
-    flexDirection: 'row',
-
-    marginTop: 25,
-
-    gap: 8,
-
-  },
-
-
-  progressActive: {
-
-    width: 35,
-
-    height: 8,
-
-    borderRadius: 10,
-
-    backgroundColor: '#34D399',
-
-  },
-
-
-  progressInactive: {
-
-    width: 20,
-
-    height: 8,
-
-    borderRadius: 10,
-
-    backgroundColor: '#D1D5DB',
-
-  },
-
-
-  instruction: {
-
-    marginTop: 18,
-
-    fontSize: 16,
-
-    color: '#64748B',
-
-    textAlign: 'center',
-
-  },
-
-
-  footer: {
-
-    paddingBottom: 25,
-
-  },
-
-
-  button: {
-
-    height: 62,
-
-    borderRadius: 31,
-
-    backgroundColor: '#00A078',
-
-    flexDirection: 'row',
-
-    justifyContent: 'center',
-
-    alignItems: 'center',
-
-    elevation: 7,
-
-  },
-
-
-  buttonText: {
-
-    color: '#FFFFFF',
-
-    fontSize: 20,
-
-    fontWeight: '800',
-
-  },
-
-
-  arrow: {
-
-    color: '#FFFFFF',
-
-    fontSize: 28,
-
-    fontWeight: 'bold',
-
-    marginLeft: 12,
-
-  },
-
-
-  errorContainer: {
-
-    flex: 1,
-
-    justifyContent: 'center',
-
-    alignItems: 'center',
-
-  },
-
 
   errorText: {
-
     fontSize: 18,
 
-    color: '#D00',
+    color: '#DC2626',
 
+    textAlign: 'center',
+
+    fontWeight: '600',
   },
 
 });

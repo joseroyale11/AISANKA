@@ -26,7 +26,7 @@ export const PROGRESS: Progress[] = [
 
   {
     studentId: 3,
-    language: 'Miskito',
+    language: 'Inglés',
     currentWorld: 1,
     currentLevel: 1,
     completedLessons: [],
@@ -37,7 +37,7 @@ export const PROGRESS: Progress[] = [
 
   {
     studentId: 4,
-    language: 'Inglés',
+    language: 'Miskito',
     currentWorld: 1,
     currentLevel: 1,
     completedLessons: [],

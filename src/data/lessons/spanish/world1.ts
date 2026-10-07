@@ -1,74 +1,149 @@
-import { Lesson } from '../../../types/Lesson';
+import {Lesson} from '../../../types/Lesson';
 
+
+// =========================================================
+// ESPAÑOL - MUNDO 1
+// Adaptación para estudiante con lengua materna Miskito
+// =========================================================
 
 export const spanishLessons: Lesson[] = [
 
-{
-    id:1,
+  {
+    id: 1,
 
-    language:'Español',
+    language: 'Español',
 
-    world:1,
+    world: 1,
 
-    level:1,
+    level: 1,
 
-    title:'Aprendamos a saludar',
+    title: 'Hola',
 
-    word:'Hola',
+    word: 'NACKSA',
 
-    translation:'Hola',
+    translation: 'Hola',
 
-    pronunciation:'Hola',
-
-    image:'',
-
-    audio:'',
-},
+    pronunciation: 'nacksa',
 
 
-{
-    id:2,
 
-    language:'Español',
-
-    world:1,
-
-    level:2,
-
-    title:'Mi nombre',
-
-    word:'Me llamo',
-
-    translation:'Mi nombre es',
-
-    pronunciation:'Me llamo',
-
-    image:'',
-
-    audio:'',
-},
+    cards: [
 
 
-{
-    id:3,
+      {
+        id: 1,
 
-    language:'Español',
+        title: '',
 
-    world:1,
+        description:
+          'Naksa, naiwa yawan NAKSA aisi lan takaya ispail ra.',
 
-    level:3,
+        spanish: 'NACKSA',
 
-    title:'Los números',
+        targetLanguage: 'HOLA',
 
-    word:'Uno',
+        pronunciation: '',
 
-    translation:'Número 1',
+        audio: require(
+          '../../../assets/sounds/saludo_miskito.mp3'
+        ),
+      },
 
-    pronunciation:'Uno',
 
-    image:'',
 
-    audio:'',
-}
+      {
+        id: 2,
+
+        title: 'Wals an kli aisas',
+
+        description:
+          '',
+
+        spanish: '',
+
+        targetLanguage: 'HOLA',
+
+        pronunciation: 'o-la',
+
+        audio: require(
+          '../../../assets/sounds/pronunciacion.mp3'
+        ),
+      },
+
+
+
+      {
+        id: 3,
+
+        title: 'Aprende a escribir',
+
+        description:
+          'Kaiks náhki asla dauki ba NAKSA ulban ka ba',
+
+        spanish: '',
+
+        targetLanguage: 'H O L A',
+
+        pronunciation: '',
+
+        audio: require(
+          '../../../assets/sounds/escritura_nacksa.mp3'
+        ),
+      },
+
+    ],
+
+
+
+    game: {
+
+      type: 'multiple-choice',
+
+      question:
+        'Wapni muns NAKSA ulban ka ba asla dauki',
+
+      maxAttempts: 3,
+
+      options: [],
+
+      starsByAttempt: [
+
+        {
+          attempt: 1,
+          stars: 3,
+        },
+
+        {
+          attempt: 2,
+          stars: 2,
+        },
+
+        {
+          attempt: 3,
+          stars: 1,
+        },
+
+      ],
+
+    },
+
+
+
+    reward: {
+
+      characterId: 1,
+
+      name: 'Rubén',
+
+      image: require(
+        '../../../assets/images/ruben.png'
+      ),
+
+      description:
+        '¡Has desbloqueado a Rubén! Ahora forma parte de tu colección de héroes de AISANKA.',
+
+    },
+
+  },
 
 ];

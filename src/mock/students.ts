@@ -40,7 +40,7 @@ export const STUDENTS: StudentProfile[] = [
     nombre: 'Marbella',
     correo: 'marbelltreminio@gmail.com',
 
-    idioma: 'Miskito',
+    idioma: 'Inglés',
     profile: 'auditivo',
 
     currentWorld: 1,
@@ -57,7 +57,7 @@ export const STUDENTS: StudentProfile[] = [
     nombre: 'José',
     correo: 'joseherrera@gmail.com',
 
-    idioma: 'Inglés',
+    idioma: 'Miskito',
     profile: 'tdah',
 
     currentWorld: 1,
