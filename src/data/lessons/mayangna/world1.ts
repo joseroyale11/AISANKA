@@ -1,74 +1,93 @@
-import { Lesson } from '../../../types/Lesson';
+// Esta configuración define el contenido de la lección Mayangna, sus recursos multimedia y el héroe que se desbloquea al completar el juego.
 
+import {Lesson} from '../../../types/Lesson';
 
 export const mayangnaLessons: Lesson[] = [
+  {
+    id: 1,
 
-{
-    id:1,
+    language: 'Mayangna',
 
-    language:'Mayangna',
+    world: 1,
 
-    world:1,
+    level: 1,
 
-    level:1,
+    title: 'Hola',
 
-    title:'Saludos',
+    word: 'PARASTH',
 
-    word:'Parastah',
+    translation: 'Hola',
 
-    translation:'Hola',
+    pronunciation: 'PARASTH',
 
-    pronunciation:'Parastah',
+    audio: require('../../../assets/sounds/parastah.mp3'),
 
-    image:'',
+    video: require('../../../assets/videos/hola_guardabarranco.mp4'),
 
-    audio:'',
-},
+    cards: [
+      {
+        id: 1,
 
+        title: 'Conoce la palabra',
 
-{
-    id:2,
+        description:
+          '',
 
-    language:'Mayangna',
+        targetLanguage: 'PARASTAH',
 
-    world:1,
+        spanish: 'Hola',
 
-    level:2,
+        video: require(
+          '../../../assets/videos/hola_guardabarranco.mp4'
+        ),
+      },
 
-    title:'Presentación',
+      {
+        id: 2,
 
-    word:'Yang',
+        title: 'Escucha y pronuncia',
 
-    translation:'Yo',
+        description:
+          'Escucha la pronunciación y repite la palabra.',
 
-    pronunciation:'Yang',
+        targetLanguage: 'PARASTAH',
 
-    image:'',
+        pronunciation: 'PARASTAH',
 
-    audio:'',
-},
+        audio: require(
+          '../../../assets/sounds/parastah.mp3'
+        ),
+      },
 
+      {
+        id: 3,
 
-{
-    id:3,
+        title: 'Aprende a escribirla',
 
-    language:'Mayangna',
+        description:
+          'Observa cómo se escribe la palabra.',
 
-    world:1,
+        targetLanguage: 'PARASTAH',
 
-    level:3,
+        spanish: 'Hola',
 
-    title:'Números',
+        video: require(
+          '../../../assets/videos/escritura_hola_mayangna.mp4'
+        ),
+      },
+    ],
 
-    word:'As',
+    reward: {
+      characterId: 3,
 
-    translation:'Uno',
+      name: 'Benjamín',
 
-    pronunciation:'As',
+      image: require(
+        '../../../assets/images/benjamin.png'
+      ),
 
-    image:'',
-
-    audio:'',
-}
-
+      description:
+        'Has desbloqueado a Benjamín, un nuevo héroe de Nicaragua para tu colección.',
+    },
+  },
 ];

@@ -18,6 +18,11 @@ import ListenScreen from '../screens/lessons/ListenScreen';
 import SpeakScreen from '../screens/lessons/SpeakScreen';
 import WriteScreen from '../screens/lessons/WriteScreen';
 import RewardScreen from '../screens/lessons/RewardScreen';
+import HolaChinoGame from '../screens/games/HolaChinoGame';
+import BuenosDiasInglesGame from '../screens/games/BuenosDiasInglesGame';
+import HolaEspañolGame from '../screens/games/HolaEspañolGame';
+import HolaMiskitoGame from '../screens/games/HolaMiskitoGame';
+import HolaMayangnaGame from '../screens/games/HolaMayangnaGame';
 const Stack = createNativeStackNavigator();
 
 export default function RootNavigator() {
@@ -82,6 +87,35 @@ export default function RootNavigator() {
   name="Reward"
   component={RewardScreen}
 />
+
+<Stack.Screen
+  name="HolaChinoGame"
+  component={HolaChinoGame}
+/>
+
+<Stack.Screen
+  name="BuenosDiasInglesGame"
+  component={BuenosDiasInglesGame}
+/>
+
+
+<Stack.Screen
+  name="HolaMiskitoGame"
+  component={HolaMiskitoGame}
+/>
+
+<Stack.Screen
+  name="HolaEspañolGame"
+  component={HolaEspañolGame}
+/>
+
+
+
+<Stack.Screen
+  name="HolaMayangnaGame"
+  component={HolaMayangnaGame}
+/>
+
 
       </Stack.Navigator>
 

@@ -219,6 +219,30 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# react_codegen_SRCS at C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/*.cpp")
+set(OLD_GLOB
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/RNSoundSpec-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# react_codegen_SRCS at C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/*.cpp")
+set(OLD_GLOB
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/ComponentDescriptors.cpp"
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/EventEmitters.cpp"
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/Props.cpp"
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/ShadowNodes.cpp"
+  "C:/Aisanka/app_AISANKA/node_modules/react-native-sound/android/build/generated/source/codegen/jni/react/renderer/components/RNSoundSpec/States.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "C:/Aisanka/app_AISANKA/android/app/.cxx/Debug/4f2j275s/armeabi-v7a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # react_codegen_SRCS at C:/Aisanka/app_AISANKA/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/CMakeLists.txt:9 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "C:/Aisanka/app_AISANKA/node_modules/react-native-vector-icons/android/build/generated/source/codegen/jni/*.cpp")
 set(OLD_GLOB
