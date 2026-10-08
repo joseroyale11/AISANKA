@@ -1,0 +1,12 @@
+Copia aquí tus imágenes originales (carpeta "recursos/img" de tu proyecto):
+
+  logo.png
+  fondo_login.png
+  fondo_pdf.png
+  perfil_docente.jfif
+
+Y en la carpeta public/assets/ copia:
+
+  docente.jpg   (opcional, se usa en Inicio)
+
+Si falta la foto del docente se muestra un icono de usuario automáticamente.
