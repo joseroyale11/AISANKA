@@ -1,13 +1,12 @@
 {
-  "name": "app_AISANKA",
-  "version": "0.0.1",
+  "name": "aisanka-panel-docente",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
